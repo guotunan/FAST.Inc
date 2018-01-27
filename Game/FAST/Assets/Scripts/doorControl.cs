@@ -1,18 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class doorControl : MonoBehaviour
 {
-	public int maxCodeNeeded = 3;
+	public int maxCodeNum = 3;
+	bool[] CodeEntered;
 	int codeEntered = 0;
-	bool startLifting = true;
+	bool startLifting = false;
 	float liftTimer = 2f;
 
-	public void codeEnterCorrectly ()
+	void Start ()
 	{
-		codeEntered++;
-		if (codeEntered == maxCodeNeeded) {
+		CodeEntered = new bool[3];
+	}
+
+	public void codeEnterCorrectly (int num)
+	{
+		CodeEntered [num - 1] = true;
+		if (CodeEntered.All (code => code)) {
 			startLifting = true;
 		}
 	}

@@ -8,8 +8,15 @@ public class RevealObjectControl : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D coll)
 	{
-		if (coll.tag == "Player1" || coll.tag == "Player2") {
+		if (coll.tag == "PlayerOne" || coll.tag == "PlayerTwo") {
 			RevealingObject.SetActive (true);
+		}
+	}
+
+	void OnTriggerExit2D (Collider2D coll)
+	{
+		if (coll.tag == "PlayerOne" || coll.tag == "PlayerTwo") {
+			RevealingObject.SetActive (false);
 		}
 	}
 
