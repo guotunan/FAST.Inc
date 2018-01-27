@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 
 	public float speed = 20.0f;
@@ -11,7 +11,9 @@ public class PlayerMovement : MonoBehaviour
 	public bool playerOne = true;
 	public Transform groundCheck;
 	public LayerMask whatIsGround;
+	public Animator anim;
 
+	bool facingRight = true;
 	float moveHorizontal = 0f;
 	float moveVertical = 0f;
 
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody2D> ();
+		anim = GetComponentInChildren<Animator> ();
 
 	}
 	
@@ -46,6 +49,14 @@ public class PlayerMovement : MonoBehaviour
 		Physics2D.Linecast (transform.position - new Vector3 (0.5f, 0, 0), groundCheck.position - new Vector3 (0.5f, 0, 0), whatIsGround);
 
 		rb.velocity = movement * speed;
+
+		if (moveHorizontal > 0 && !facingRight) {
+			FlipCharacter ();
+		} else if (moveHorizontal < 0 && facingRight) {
+			FlipCharacter ();
+		}
+
+		Animations (moveHorizontal);
 
 	}
 
@@ -86,4 +97,29 @@ public class PlayerMovement : MonoBehaviour
 	//		}
 	//		return moveVertical;
 	//	}
+	void Animations(float moveHorizontal){
+		bool oneWalking = false;
+		bool twoWalking = false;
+
+		if (playerOne) {
+			if (moveHorizontal != 0f) {
+				oneWalking = true;
+			}
+			anim.SetBool ("oneIsWalking", oneWalking);
+		} else if (!playerOne){
+			if (moveHorizontal != 0f) {
+				twoWalking = true;
+			}
+			anim.SetBool ("twoIsWalking", twoWalking);
+		}
+	}
+
+	void FlipCharacter(){
+
+		//Changes bool value of looking right to right direction.
+		facingRight = !facingRight;
+
+		//Rotates 180 degrees.
+		transform.Rotate (0, 180, 0);
+	}
 }
