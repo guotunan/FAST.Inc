@@ -2259,6 +2259,26 @@ Prefab:
       propertyPath: playerOne
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 61814731752601458, guid: 3bd7eca322b62457393497cde4668c8e,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.8504462
+      objectReference: {fileID: 0}
+    - target: {fileID: 61814731752601458, guid: 3bd7eca322b62457393497cde4668c8e,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 2.4991074
+      objectReference: {fileID: 0}
+    - target: {fileID: 61814731752601458, guid: 3bd7eca322b62457393497cde4668c8e,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.016673386
+      objectReference: {fileID: 0}
+    - target: {fileID: 61814731752601458, guid: 3bd7eca322b62457393497cde4668c8e,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 2.0989804
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3bd7eca322b62457393497cde4668c8e, type: 2}
   m_IsPrefabParent: 0
