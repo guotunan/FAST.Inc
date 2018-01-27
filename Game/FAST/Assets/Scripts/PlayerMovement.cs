@@ -42,8 +42,8 @@ public class PlayerMovement : MonoBehaviour
 
 		//check if player is standing on ground
 		isOnGround = Physics2D.Linecast (transform.position, groundCheck.position, whatIsGround) ||
-		Physics2D.Linecast (transform.position + new Vector3 (0.3f, 0, 0), groundCheck.position + new Vector3 (0.25f, 0, 0), whatIsGround) ||
-		Physics2D.Linecast (transform.position - new Vector3 (0.3f, 0, 0), groundCheck.position - new Vector3 (0.25f, 0, 0), whatIsGround);
+		Physics2D.Linecast (transform.position + new Vector3 (0.5f, 0, 0), groundCheck.position + new Vector3 (0.5f, 0, 0), whatIsGround) ||
+		Physics2D.Linecast (transform.position - new Vector3 (0.5f, 0, 0), groundCheck.position - new Vector3 (0.5f, 0, 0), whatIsGround);
 
 		rb.velocity = movement * speed;
 
