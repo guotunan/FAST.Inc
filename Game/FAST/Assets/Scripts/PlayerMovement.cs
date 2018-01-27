@@ -51,21 +51,39 @@ public class PlayerMovement : MonoBehaviour
 
 	float Jump (float moveVertical)
 	{
-
+	
 		if (isOnGround) {
 			moveVertical = -gravity * Time.deltaTime;
-
-			if (Input.GetKeyDown (KeyCode.LeftShift) && playerOne) {
+	
+			if ((Input.GetKeyDown (KeyCode.LeftShift) && playerOne) || (Input.GetKeyDown (KeyCode.Space) && !playerOne)) {
 				moveVertical = jumpForce;
-				isOnGround = false;
-			} else if (Input.GetKeyDown (KeyCode.Space) && !playerOne) {
-				moveVertical = jumpForce;
-				isOnGround = false;
-			}
+			} 
 		} else {
 			moveVertical -= gravity * Time.deltaTime;
 		}
-
+	
 		return moveVertical;
 	}
+
+	//	float Jump (float moveVertical)
+	//	{
+	//
+	//		if (isOnGround) {
+	//			moveVertical = 0f;
+	//
+	//			if (Input.GetKeyDown (KeyCode.LeftShift) && playerOne) {
+	//				GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, jumpForce), ForceMode2D.Impulse);
+	//			} else if (Input.GetKeyDown (KeyCode.Space) && !playerOne) {
+	//				GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, jumpForce), ForceMode2D.Impulse);
+	//			}
+	//		}
+	//
+	//		if (Input.GetKeyUp (KeyCode.LeftShift) && playerOne) {
+	//			moveVertical = 0f;
+	//		}
+	//		if (Input.GetKeyUp (KeyCode.Space) && !playerOne) {
+	//			moveVertical = 0f;
+	//		}
+	//		return moveVertical;
+	//	}
 }
