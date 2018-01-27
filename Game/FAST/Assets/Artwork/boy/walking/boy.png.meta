@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: dfaba10321cff462b8703c4007e5382d
-timeCreated: 1517067540
+guid: b3b0e7c305c5c4de5b158df6eecfd170
+timeCreated: 1517068356
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: boy_0
-    21300002: boy_1
-    21300004: boy_2
-    21300006: boy_3
+    21300000: Boy_0
+    21300002: Boy_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -114,21 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boy_0
-      rect:
-        serializedVersion: 2
-        x: 236
-        y: 1720
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: boy_1
+      name: Boy_0
       rect:
         serializedVersion: 2
         x: 399
@@ -142,21 +126,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: boy_2
-      rect:
-        serializedVersion: 2
-        x: 236
-        y: 696
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: boy_3
+      name: Boy_1
       rect:
         serializedVersion: 2
         x: 389
